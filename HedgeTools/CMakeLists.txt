@@ -1,3 +1,12 @@
+# MinGW additions
+if(MINGW)
+    if(HEDGELIB_WIN32_FORCE_ANSI)
+        SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -static")
+    else()
+        SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -municode -static")
+    endif()
+endif()
+
 add_subdirectory(HedgeArcPack)
 add_subdirectory(HedgeNeedle)
 add_subdirectory(HedgeSet)

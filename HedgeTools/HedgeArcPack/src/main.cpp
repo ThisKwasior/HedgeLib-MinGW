@@ -425,7 +425,7 @@ static void print_usage(std::FILE* stream)
     hl::console::write(get_text(text_id::help1), stream);
 
     // Print types.
-    print_types(HL_NTEXT("\t\t%s"), stream);
+    print_types(HL_NTEXT("\t\t%ls"), stream);
 
     // Print help2.
     hl::console::write(get_text(text_id::help2), stream);
@@ -455,7 +455,7 @@ static arc_type prompt_for_arc_type()
 {
     // Ask user for type and print all valid type options.
     hl::console::write(get_text(text_id::type1), stderr);
-    print_types(HL_NTEXT(" %s"), stderr);
+    print_types(HL_NTEXT(" %ls"), stderr);
     hl::console::write(get_text(text_id::type2), stderr);
 
     // Get type from user input and return it.

@@ -4,6 +4,24 @@
 
 **IMPORTANT:** All code committed to this repository, preferably, should follow [these style guidelines](https://github.com/Radfordhound/HedgeLib/wiki/Code-Style).
 
+# Building in MSYS2/MinGW
+
+Install the following software and libraries in MINGW64 shell:
+```
+$ pacman -S cmake git gcc mingw-w64-x86_64-robin-hood-hashing mingw-w64-x86_64-glm mingw-w64-x86_64-lz4 mingw-w64-x86_64-zlib mingw-w64-x86_64-glfw mingw-w64-x86_64-rapidjson
+```
+
+Clone the repository and build:
+```
+$ git clone https://github.com/ThisKwasior/HedgeLib-MinGW.git
+$ cd HedgeLib-MinGW
+$ mkdir build && cd build
+$ cmake .. -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=../HedgeLib-Release
+$ make -j8 install
+```
+
+After it's done you hopefully should see a `HedgeLib-Release` directory in the root of the repository.
+
 ## Download
 
 This repository uses [AppVeyor](https://www.appveyor.com) to automatically build every commit!
